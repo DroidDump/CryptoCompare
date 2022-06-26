@@ -1,12 +1,12 @@
 package com.example.cryptocompare.domain.usecase
 
 import com.example.cryptocompare.domain.models.CoinItem
-import com.example.cryptocompare.domain.repository.CoinListRepository
+import com.example.cryptocompare.domain.repository.CoinRepository
 
 
-class GetCoinListUseCase(private val coinListRepository: CoinListRepository) {
+class GetCoinListUseCase(private val coinRepository: CoinRepository) {
 
     fun execute(): List<CoinItem> {
-        return coinListRepository.getCoinList()
+        return coinRepository.getCoinList()
     }
 }
