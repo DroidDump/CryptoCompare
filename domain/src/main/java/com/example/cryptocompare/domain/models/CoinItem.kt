@@ -8,6 +8,6 @@ data class CoinItem (
     val minPrice: Double, // LOWDAY
     val maxPrice: Double, // HIGHDAY
     val lastMarket: String,
-    val lastUpdate: Int,
+    val lastUpdate: String,
     val imageUrl: String,
 )
