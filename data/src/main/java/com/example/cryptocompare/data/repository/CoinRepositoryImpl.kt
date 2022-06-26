@@ -1,20 +1,29 @@
 package com.example.cryptocompare.data.repository
 
+import com.example.cryptocompare.data.storage.CoinListStorage
 import com.example.cryptocompare.data.storage.CoinStorage
 import com.example.cryptocompare.data.storage.models.Coin
 import com.example.cryptocompare.domain.models.CoinItem
 import com.example.cryptocompare.domain.repository.CoinRepository
 
 
-class CoinRepositoryImpl(private val coinStorage: CoinStorage) : CoinRepository {
+class CoinRepositoryImpl(
+    private val coinStorage: CoinStorage,
+    private val coinListStorage: CoinListStorage
+    ) : CoinRepository {
 
     override fun getCoinItem(fromSymbol: String): CoinItem {
-        val coinItem = coinStorage.get(fromSymbol)
-        return mapToDomain(coinItem)
+        val coin = coinStorage.get(fromSymbol)
+        return mapToDomain(coin)
     }
 
     override fun getCoinList(): List<CoinItem> {
-        TODO("Not yet implemented")
+        val coinList = coinListStorage.get()
+        val coinItemList = mutableListOf<CoinItem>()
+        for (coin in coinList) {
+            coinItemList.add(mapToDomain(coin))
+        }
+        return coinItemList
     }
 
     private fun mapToDomain(coin: Coin): CoinItem {
