@@ -1,7 +1,8 @@
-package com.example.cryptocompare
+package com.example.cryptocompare.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.cryptocompare.R
 
 
 class MainActivity : AppCompatActivity() {
