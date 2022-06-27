@@ -1,4 +1,4 @@
-package com.example.cryptocompare.data.storage.database.api
+package com.example.cryptocompare.data.api
 
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory

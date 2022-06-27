@@ -1,4 +1,4 @@
-package com.example.cryptocompare.data.storage.database.pojo
+package com.example.cryptocompare.data.api.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

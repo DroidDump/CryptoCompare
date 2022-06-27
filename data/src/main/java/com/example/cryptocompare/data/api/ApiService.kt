@@ -1,7 +1,7 @@
-package com.example.cryptocompare.data.storage.database.api
+package com.example.cryptocompare.data.api
 
-import com.example.cryptocompare.data.storage.database.pojo.CoinInfoListOfData
-import com.example.cryptocompare.data.storage.database.pojo.CoinPriceInfoRawData
+import com.example.cryptocompare.data.api.models.CoinInfoListOfData
+import com.example.cryptocompare.data.api.models.CoinPriceInfoRawData
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query

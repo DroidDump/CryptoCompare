@@ -1,4 +1,4 @@
-package com.example.cryptocompare.data.storage.database.pojo
+package com.example.cryptocompare.data.api.models
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
