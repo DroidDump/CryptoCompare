@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit
 
 
 class CoinViewModel(application: Application) : AndroidViewModel(application) {
-    private val apiKey = application.getString(R.string.api_key)
+    private val apiKey = application.getString(R.string.API_KEY)
     private val db = AppDatabase.getInstance(application)
     private val compositeDisposable = CompositeDisposable()
 
@@ -31,9 +31,9 @@ class CoinViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun loadData() {
-        val disposable = ApiFactory.apiService.getTopCoinsInfo(apiKey = apiKey, limit = 50)
+        val disposable = ApiFactory.apiService.getTopCoinsInfo(API_KEY = apiKey, limit = 50)
             .map { it -> it.data?.map { it.coinInfo?.name }?.joinToString(",") }
-            .flatMap { ApiFactory.apiService.getFullPriceList(apiKey = apiKey, fSyms = it) }
+            .flatMap { ApiFactory.apiService.getFullPriceList(API_KEY = apiKey, fSyms = it) }
             .map { getPriceListFromRawData(it) }
             .delaySubscription(10, TimeUnit.SECONDS)
             .repeat()
