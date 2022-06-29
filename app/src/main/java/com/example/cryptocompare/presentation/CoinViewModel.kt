@@ -30,7 +30,7 @@ class CoinViewModel(application: Application) : AndroidViewModel(application) {
         loadData()
     }
 
-    fun loadData() {
+    private fun loadData() {
         val disposable = ApiFactory.apiService.getTopCoinsInfo(API_KEY = apiKey, limit = 50)
             .map { it -> it.data?.map { it.coinInfo?.name }?.joinToString(",") }
             .flatMap { ApiFactory.apiService.getFullPriceList(API_KEY = apiKey, fSyms = it) }
